@@ -1,0 +1,26 @@
+{
+  "name": "babbling_book",
+  "version": "1.0.0",
+  "description": "a book review app! perhaps i will name it the quill or the quirky inquiry",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:create": "createdb babbling_book",
+    "db:destroy": "dropdb babbling_book",
+    "db:init": "psql -f ./sql/schema.sql babbling_book",
+    "db:seed": "psql -f ./sql/seed.sql babbling_book",
+    "db:reset": "npm run db:destroy; npm run db:create && npm run db:init && npm run db:seed",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-es6-template-engine": "^2.2.3",
+    "express-session": "^1.17.1",
+    "pg-promise": "^10.9.2"
+  }
+}
